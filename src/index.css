@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+smallBtn {font-family:verdana;font-size:7pt;color:606060}
+tb       {background-color:black;width:100%}
+tx       {border:1px solid d0d0d0;width:75%;font-size:10pt;font-weight:700}
+txtrue   {color:"green"}
+sel      {border:1px solid d0d0d0;width:33%}
+thLeft   {font-size:10pt;font-weight:700;background-color:white;padding:2px;text-align:left}
+thRight  {font-size:10pt;font-weight:700;background-color:white;padding:2px;text-align:right}
+th       {font-size:10pt;font-weight:700;background-color:white;padding:2px;text-align:center}   
+tdLeft   {font-size:10pt;font-weight:400;background-color:white;padding:2px;text-align:center;text-align:left}   
+td       {font-size:10pt;font-weight:400;background-color:white;padding:2px;text-align:center} 

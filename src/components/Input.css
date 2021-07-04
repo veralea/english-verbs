@@ -1,0 +1,36 @@
+.inp{
+    max-width: 75%;
+    max-height: 90%;
+    border: 1px solid rgb(180, 183, 185);
+    border-radius: 3px;
+}
+
+
+.txtrue   {
+    color:green
+}
+.txfalse   {
+    color:red
+}
+.beforeText{
+    width: 13%;
+}
+.afterText{
+    width: 4%;
+}
+.invis:nth-child(5){
+    visibility: hidden;
+}
+.check{
+    width: 5%;
+    font-weight: bold;
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    animation: show 1s; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: .5s; /* Задержка перед началом */
+}
+
+@keyframes show{
+    from {opacity: 0} 
+    to {opacity: 1}
+}
