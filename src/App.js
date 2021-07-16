@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <h5>Таблица личных форм английского глагола</h5>
-      <Table />
+       <Table />
     </div>
   );
 }

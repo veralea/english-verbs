@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mybuild": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +42,35 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^5.2.7",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.1.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veralea/english-verbs.git"
+  },
+  "keywords": [
+    "english",
+    "verbs",
+    "selflearning"
+  ],
+  "author": "Vera Poletyuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veralea/english-verbs/issues"
+  },
+  "homepage": ""
 }

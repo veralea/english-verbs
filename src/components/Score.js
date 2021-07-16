@@ -36,9 +36,7 @@ class Score extends Component {
         )
     }
 }
-// const mapDispatchToProps = {
-//     setIsAdmin
-// }    
+    
 
 const mapStateToProps = state => {
     
