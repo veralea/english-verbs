@@ -10,8 +10,7 @@ class Input extends Component {
         this.state = {
             fildText: "" ,
             isTrue0: false,
-            isTrue: 0,
-            wrapClassName: this.props.voice === "ACTIVE" ? "cell" : "cell invis"
+            isTrue: 0
             };
         this.changeInputHandler = this.changeInputHandler.bind(this);
         this.blurInputHandler = this.blurInputHandler.bind(this);
@@ -19,8 +18,10 @@ class Input extends Component {
 
 
 
-    blurInputHandler = (event,i,fildNum) => {
-        if(this.props.indI !== -1){
+    blurInputHandler = (event) => {
+        let i = this.props.verb
+        let fildNum = Number(this.props.fildNum)
+        if(this.props.verb !== -1){
             event.persist()
             this.setState({
                 isTrue  : fildNum === 0 && this.props.voice === "ACTIVE" ? verbList[i][0] === event.target.value ? true : false 
@@ -176,9 +177,11 @@ class Input extends Component {
             
         }
     }
-
-    changeInputHandler = (event,i,fildNum) => {
-        if(this.props.indI !== -1){
+    
+    changeInputHandler = (event) => {
+        let i = this.props.verb
+        let fildNum = Number(this.props.fildNum)
+        if(this.props.verb !== -1){
             event.persist()
             this.setState(prev => ({...prev,...{
              [event.target.name]: event.target.value,
@@ -254,9 +257,9 @@ class Input extends Component {
                      : fildNum === 38 && this.props.voice === "PASSIVE"? ((["He","She","It"].indexOf(this.props.person)> -1 ?"will not has been ":"will not have been ")+verbList[i][2]).indexOf(event.target.value) > -1 || ((["He","She","It"].indexOf(this.props.person) > -1 ?"won't has been ":"won't have been ")+verbList[i][2]).indexOf(event.target.value) > -1 ||(["I","We"].indexOf(this.props.person) > -1 && ("shall not have been "+verbList[i][2]).indexOf(event.target.value) > -1) ? true : false
                      : false
          }}))
-        }else{ //end if(this.props.indI !== -1)
+        }else{ //end if(this.props.verb !== -1)
             alert("Выберите глагол!!")
-        }//end else if(this.props.indI !== -1)
+        }//end else if(this.props.verb !== -1)
         
     }//end changeInputHandler
 
@@ -288,8 +291,8 @@ class Input extends Component {
                     <input 
                         className={this.state.isTrue0 ? "txtrue inp" : "txfalse inp"} 
                         type="text" name="fildText" value={this.state.fildText} 
-                        onChange={(e)=>this.changeInputHandler(e,Number(this.props.indI),Number(this.props.fildNum))}
-                        onBlur={(e)=>this.blurInputHandler(e,Number(this.props.indI),Number(this.props.fildNum))}
+                        onChange={this.changeInputHandler}
+                        onBlur={this.blurInputHandler}
                         onFocus={()=>{this.setState({isTrue:0})}}
                          
                     />
@@ -307,7 +310,7 @@ const mapDispatchToProps = {
 const mapStateToProps = state => {
     
     return {
-        indI: state.customization.verb,
+        verb: state.customization.verb,
         voice: state.customization.voice,
         person: state.customization.person
     }
