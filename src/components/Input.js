@@ -284,6 +284,7 @@ class Input extends Component {
       }
      
     render() {
+<dff>ghjh</dff>
 
         return (
                 <div className={this.props.voice === "ACTIVE" ? "cell" : "cell invis"}>
